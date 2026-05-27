@@ -1,10 +1,9 @@
-package springboot.backend.entity;
+package com.taskmanager.task.entity; // बिल्कुल सही पैकेज पाथ है
 
-import jakarta.persistence.*;
+import jakarta.persistence.*; // FIXED: @Entity, @Id, @Table, @Column के लिए ये इम्पोर्ट ज़रूरी है
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Entity
 @Data
@@ -12,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name = "task_table")
 public class Task {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,5 +26,4 @@ public class Task {
 
     @Column(name = "assigned_user", nullable = false)
     private String assignedUser;
-
 }
