@@ -1,6 +1,6 @@
 package com.taskmanager.task.entity; // बिल्कुल सही पैकेज पाथ है
 
-import jakarta.persistence.*; // FIXED: @Entity, @Id, @Table, @Column के लिए ये इम्पोर्ट ज़रूरी है
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,8 +22,8 @@ public class Task {
     private String description;
 
     @Column(name = "task_status", nullable = false)
-    private String taskStatus; // Open, In Progress, Done
+    private String taskStatus; // Open(Default)
 
-    @Column(name = "assigned_user", nullable = false)
-    private String assignedUser;
+    @Column(name = "assigned_user_id")
+    private Long assignedUserId;
 }
